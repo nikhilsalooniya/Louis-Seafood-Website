@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import pool from '@/lib/db';  // Ensure you have the right path for your db connection
+import pool from '@/src/lib/db';  // Ensure you have the right path for your db connection
 
 export async function DELETE(
   req: NextRequest,
