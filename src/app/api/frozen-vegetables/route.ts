@@ -1,0 +1,68 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { Pool } from 'pg';
+import { v2 as cloudinary } from 'cloudinary';
+
+// Configure Cloudinary with env variables
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false, // Neon SSL config
+  },
+});
+
+export async function POST(req: NextRequest) {
+  try {
+    const formData = await req.formData();
+
+    const title = formData.get('title') as string;
+    const description = formData.get('description') as string;
+    const file = formData.get('image') as File;
+
+    if (!file || typeof file === 'string') {
+      return NextResponse.json({ error: 'Invalid image file' }, { status: 400 });
+    }
+
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+
+    // Upload buffer to Cloudinary
+    const uploadResult: any = await new Promise((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        { folder: 'frozen_vegetables' }, // Optional folder
+        (error, result) => {
+          if (error) reject(error);
+          else resolve(result);
+        }
+      );
+      uploadStream.end(buffer);
+    });
+
+    const imageUrl = uploadResult.secure_url; // Cloudinary URL
+
+    await pool.query(
+      'INSERT INTO frozen_vegetables_products (title, description, image_url) VALUES ($1, $2, $3)',
+      [title, description, imageUrl]
+    );
+
+    return NextResponse.json({ message: 'Product added successfully!' }, { status: 201 });
+  } catch (err) {
+    console.error('Error inserting into the database or uploading image:', err);
+    return NextResponse.json({ error: 'Database or upload error' }, { status: 500 });
+  }
+}
+
+export async function GET() {
+  try {
+    const result = await pool.query('SELECT * FROM frozen_vegetables_products');
+    return NextResponse.json(result.rows, { status: 200 });
+  } catch (err) {
+    console.error('Error fetching from database:', err);
+    return NextResponse.json({ error: 'Failed to fetch data' }, { status: 500 });
+  }
+}
