@@ -19,7 +19,7 @@ const sendEmail = async (
   // Email to admin/site owner
   const adminMailOptions = {
     from: process.env.EMAIL_USER,
-    to: 'recipient-email@example.com', // Admin's email
+    to: 'saloniyanikhil@gmail.com', // Admin's email
     subject: `New Contact Form Submission: ${subject}`,
     text: `You have received a new message from the contact form.\n\n` +
           `Name: ${name}\n` +
@@ -36,7 +36,7 @@ const sendEmail = async (
     subject: `Thank you for contacting us, ${name}!`,
     text: `Hi ${name},\n\nThank you for reaching out to us regarding "${subject}".\n` +
           `We have received your message and our team will get back to you shortly.\n\n` +
-          `Best regards,\nYour Company Name`,
+          `Best regards,\nLouis Seafood LLC`,
   };
 
   try {

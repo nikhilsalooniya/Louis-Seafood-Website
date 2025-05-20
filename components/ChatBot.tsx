@@ -49,7 +49,7 @@ const getBotResponse = (userMessage: string): string => {
   if (msg.includes("privacy")) return faqAnswers["privacy"];
   if (msg.includes("terms")) return faqAnswers["terms"];
   if (msg.includes("faq")) return faqAnswers["faq"];
-  if (msg.includes("hello") || msg.includes("hi")) return "Hello! How can I assist you today?";
+  if (msg.includes("hello") || msg.includes("hi") || msg.includes("hey")) return "Hello! How can I assist you today?";
   if (msg.includes("thank you") || msg.includes("thanks")) return "You're welcome! If you have more questions, feel free to ask.";
   if (msg.includes("bye") || msg.includes("goodbye")) return "Goodbye! Have a great day!";
   if (msg.includes("joke")) return "Why don't scientists trust atoms? Because they make up everything!";
