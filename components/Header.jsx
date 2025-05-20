@@ -49,14 +49,15 @@ const Header = () => {
         <nav className="flex justify-between items-center max-w-7xl mx-auto">
           <Link href="/">
             <div className="flex items-center space-x-2">
-              <Image
-                src="/images/logo2.png"
-                alt="Seafood Delight Logo"
-                width={160}
-                height={50}
-                className="h-auto w-auto object-contain"
-                priority
-              />
+              {/*<Image*/}
+              {/*  src="/images/logo2.png"*/}
+              {/*  alt="Seafood Delight Logo"*/}
+              {/*  width={120}*/}
+              {/*  height={50}*/}
+              {/*  className="h-auto w-auto object-contain"*/}
+              {/*  priority*/}
+              {/*/>*/}
+              <img src="/images/logo2.png" alt="LOGO" className={"h-[60px] w-auto object-contain"}/>
               <span className="text-gray-900 font-bold text-xl">Louis Seafood, LLC</span>
             </div>
           </Link>

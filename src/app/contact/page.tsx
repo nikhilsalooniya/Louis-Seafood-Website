@@ -6,7 +6,7 @@ import ContactPrompt from '../../../components/ContactPrompt';
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-white p-6 flex flex-col md:flex-row justify-center items-center gap-6">
+    <div className="min-h-screen m-auto bg-gradient-to-br from-blue-100 to-white p-6 flex flex-col md:flex-row justify-center items-center gap-6">
       <div className="w-full md:w-1/2">
         <ContactPrompt />
       </div>

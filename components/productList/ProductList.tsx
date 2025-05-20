@@ -23,7 +23,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="bg-white  border border-gray-200 rounded-lg overflow-hidden h-[450px] w-full transform scale-[.90]"
+      className="bg-white  border border-gray-200 rounded-lg overflow-hidden h-[450px] w-full transform scale-[.90] h-36"
     >
       <img
         src={product.image_url}
@@ -62,7 +62,7 @@ const ProductList: React.FC<ProductListProps> = ({ category }) => {
   }, [category]);
 
   return (
-    <div className="relative bg-white p-6 rounded-lg">
+    <div className="relative bg-white p-6 rounded-lg max-w-7xl m-auto">
      
      
 

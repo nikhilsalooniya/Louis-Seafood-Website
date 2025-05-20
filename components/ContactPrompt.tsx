@@ -34,7 +34,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col items-center">
 
       {/* Left Side – Contact Info with background image */}
       <div

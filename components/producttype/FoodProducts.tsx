@@ -8,11 +8,11 @@ const FoodProducts: React.FC = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url('/images/frozenveg.jpg')` }} // Replace with your image path
       >
-        <div className="absolute inset-0 bg-[#000000]/80" /> {/* Green overlay with 80% opacity */}
+        <div className="absolute inset-0 bg-[#000000]/50" /> {/* Green overlay with 80% opacity */}
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-4 py-36">
         <h2 className="text-4xl font-bold font-serif mb-4">Food Products</h2>
         <p className="max-w-xl mx-auto text-green-100">
           Explore our wide selection of high-quality food products, including grains, spices, sauces, and more—all globally sourced.

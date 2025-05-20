@@ -8,11 +8,11 @@ const SeafoodProducts: React.FC = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url('/images/freepik__the-style-is-3d-model-with-octane-render-volumetri__27992.jpeg')` }} // Update with your image path
       >
-        <div className="absolute inset-0 bg-[#000000]/80" /> {/* Overlay */}
+        <div className="absolute inset-0 bg-[#000000]/50" /> {/* Overlay */}
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4">
+      <div className="relative z-10 text-center px-4 py-36">
         <h2 className="text-4xl font-bold font-serif mb-4">Seafood Products</h2>
         <p className="max-w-xl mx-auto text-blue-100">
           Dive into our wide range of fresh, frozen, and packaged seafood sourced from sustainable oceans and clean waters.

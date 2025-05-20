@@ -11,6 +11,7 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (
+          // TODO: CHANGE PASS HERE
           credentials?.username === "admin" &&
           credentials?.password === "admin123"
         ) {
