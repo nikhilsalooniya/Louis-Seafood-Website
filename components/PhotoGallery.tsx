@@ -59,7 +59,7 @@ const AutoScrollGallery = () => {
 
   return (
     <div className="max-w-full mx-auto px-4 py-16">
-      <h2 className="text-4xl font-bold text-center text-blue-900 font-serif mb-12">
+      <h2 className="text-4xl font-bold text-center text-theme-blue-2 font-serif mb-12">
          Gallery
       </h2>
 

@@ -34,7 +34,7 @@ const HeroSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative bg-[#0077be] h-screen text-white overflow-hidden">
+    <section className="relative bg-theme-blue h-screen overflow-hidden">
       {/* Wave Border (bottom) */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none rotate-180 z-10">
         <svg viewBox="0 0 1200 100" preserveAspectRatio="none" className="w-full h-20">

@@ -61,7 +61,7 @@ const WhyChooseUs = () => {
         boxShadow: '-3px 3px 8px rgba(0, 0, 0, 0.1)',
       }} />
 
-      <h2 className="text-3xl font-bold text-blue-900 text-center mb-8">
+      <h2 className="text-3xl font-bold text-theme-blue-2 text-center mb-8">
         Why Choose Louis Seafood?
       </h2>
 
@@ -72,7 +72,7 @@ const WhyChooseUs = () => {
             key={index}
             className="bg-[#f9f9f9] rounded-lg p-5 shadow-sm hover:shadow-md transition"
           >
-            <h3 className="text-xl font-semibold text-blue-800 mb-2">{item.title}</h3>
+            <h3 className="text-xl font-semibold text-theme-blue-2 mb-2">{item.title}</h3>
             <p className="text-gray-700 text-sm leading-relaxed">{item.description}</p>
           </div>
         ))}

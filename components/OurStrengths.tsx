@@ -22,8 +22,8 @@ const OurStrengths = () => {
   };
 
   return (
-  <div className="relative overflow-hidden bg-gradient-to-br from-[#001f3f] via-[#003366] to-[#004080] text-white py-20 px-6 md:px-16 my-8">
-    <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 md:items-center">
+  <div className="relative overflow-hidden bg-gradient-to-br from-theme-blue-2 to-theme-blue-3 text-white py-20 px-6 md:px-16 my-8">
+    <div className="max-w-7xl md:px-16 mx-auto flex flex-col md:flex-row gap-10 md:items-center">
 
       
       {/* Left Content */}

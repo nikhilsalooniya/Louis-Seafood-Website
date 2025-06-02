@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-900 text-white text-center py-10 mt-10 shadow-inner">
+        <footer className="bg-theme-blue-4 text-white text-center py-10 mt-10 shadow-inner">
             <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 {/* Column 1: Address */}
                 <div>
@@ -15,7 +15,7 @@ const Footer = () => {
                     </p>
                     <p>Phone: [Your Phone Number]</p>
                     <p>
-                        Email: <a href="mailto:info@louisseafood.com" className="text-blue-300 hover:text-white">info@louisseafood.com</a>
+                        Email: <a href="mailto:info@louisseafood.com" className="text-theme-blue-3 hover:text-white">info@louisseafood.com</a>
                     </p>
                 </div>
 
@@ -25,16 +25,16 @@ const Footer = () => {
     <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
     <ul className="space-y-2">
         <li>
-            <Link href="/" className="text-blue-300 hover:text-white">Home</Link>
+            <Link href="/" className="text-theme-blue-3 hover:text-white">Home</Link>
         </li>
         <li>
-            <Link href="/products-services" className="text-blue-300 hover:text-white">Products</Link>
+            <Link href="/products-services" className="text-theme-blue-3 hover:text-white">Products</Link>
         </li>
         <li>
-            <Link href="/about" className="text-blue-300 hover:text-white">About</Link>
+            <Link href="/about" className="text-theme-blue-3 hover:text-white">About</Link>
         </li>
         <li>
-            <Link href="/contact" className="text-blue-300 hover:text-white">Contact</Link>
+            <Link href="/contact" className="text-theme-blue-3 hover:text-white">Contact</Link>
         </li>
     </ul>
 </div>

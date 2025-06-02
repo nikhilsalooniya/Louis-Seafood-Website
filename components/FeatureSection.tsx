@@ -29,7 +29,7 @@ const FeaturesSection = () => {
   return (
     <section className="py-16 px-8 bg-white">
       <div className="max-w-6xl mx-auto">
-        <h3 className="text-4xl font-extrabold text-center text-[#003366] mb-16 font-serif">
+        <h3 className="text-4xl font-extrabold text-center text-theme-blue-2 mb-16 font-serif">
           What We Offer
         </h3>
 
@@ -52,7 +52,7 @@ const FeaturesSection = () => {
 
             {/* Description */}
             <div className="md:w-1/2 w-full text-center md:text-left">
-              <h4 className="text-2xl md:text-3xl font-bold text-[#003366] mb-4 font-serif">
+              <h4 className="text-2xl md:text-3xl font-bold text-theme-blue-2 mb-4 font-serif">
                 {feature.title}
               </h4>
               <p className="text-gray-600">{feature.description}</p>

@@ -7,11 +7,19 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --theme-blue: #e1eef4;
+  --theme-blue-2: #1498df;
+  --theme-blue-3: #43bded;
+  --theme-blue-4: #00355c;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-theme-blue: var(--theme-blue);
+  --color-theme-blue-2: var(--theme-blue-2);
+  --color-theme-blue-3: var(--theme-blue-3);
+  --color-theme-blue-4: var(--theme-blue-4);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

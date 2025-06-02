@@ -70,7 +70,7 @@ const Header = () => {
             <li>
               <Link
                 href="/"
-                className={`px-3 py-1 rounded-full transition-all ${pathname === '/' ? 'bg-white border border-gray-900 text-gray-900' : ''
+                className={`px-3 py-1 rounded-full transition-all ${pathname === '/' ? 'text-theme-blue-3 ' : ''
                   }`}
               >
                 Home
@@ -79,7 +79,7 @@ const Header = () => {
             <li>
               <Link
                 href="/product-services"
-                className={`px-3 py-1 rounded-full transition-all ${pathname === '/product-services' ? 'bg-white border border-gray-900 text-gray-900' : ''
+                className={`px-3 py-1 rounded-full transition-all ${pathname === '/product-services' ? 'text-theme-blue-3 ' : ''
                   }`}
               >
                 Products
@@ -88,7 +88,7 @@ const Header = () => {
             <li>
               <Link
                 href="/about"
-                className={`px-3 py-1 rounded-full transition-all ${pathname === '/about' ? 'bg-white border border-gray-900 text-gray-900' : ''
+                className={`px-3 py-1 rounded-full transition-all ${pathname === '/about' ? 'text-theme-blue-3 ' : ''
                   }`}
               >
                 About
@@ -97,7 +97,7 @@ const Header = () => {
             <li>
               <Link
                 href="/contact"
-                className={`px-3 py-1 rounded-full transition-all ${pathname === '/contact' ? 'bg-white border border-gray-900 text-gray-900' : ''
+                className={`px-3 py-1 rounded-full transition-all ${pathname === '/contact' ? 'text-theme-blue-3 ' : ''
                   }`}
               >
                 Contact

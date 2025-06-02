@@ -67,7 +67,7 @@ const Mission = () => {
 
   return (
     <div className="bg-white p-8 shadow-lg">
-      <h2 className="text-3xl font-bold text-blue-900 text-center mb-8">Our Mission</h2>
+      <h2 className="text-3xl font-bold text-theme-blue-2 text-center mb-8">Our Mission</h2>
 
       {/*<div className="grid grid-cols-4 auto-rows-[200px] gap-4 ">*/}
       <div className="grid grid-cols-3 grid-rows-[200px] gap-4">

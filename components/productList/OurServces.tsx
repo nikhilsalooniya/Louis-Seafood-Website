@@ -32,7 +32,7 @@ export default function OurServices() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-gray-900 p-6 rounded-xl shadow hover:shadow-md transition duration-300 text-center"
+              className="bg-theme-blue p-6 rounded-xl shadow hover:shadow-md transition duration-300 text-center"
             >
               <div className="mt-8 mb-2 flex justify-center">{service.icon}</div>
               <h3 className="text-lg font-semibold mb-2">{service.title}</h3>

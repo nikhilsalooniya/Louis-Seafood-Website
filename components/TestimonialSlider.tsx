@@ -63,7 +63,7 @@ const TestimonialSlider = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-16">
-      <h2 className="text-4xl font-bold text-blue-900 text-center mb-10 font-serif">Testimonials</h2>
+      <h2 className="text-4xl font-bold text-theme-blue-2 text-center mb-10 font-serif">Testimonials</h2>
       <div className="relative">
         <Slider {...settings}>
           {testimonials.map((item, idx) => (
@@ -75,7 +75,7 @@ const TestimonialSlider = () => {
                   className="w-20 h-20 rounded-full object-cover border-4 border-blue-200 mb-4"
                 />
                 <p className="text-gray-700 italic text-center mb-3 text-sm">"{item.comment}"</p>
-                <p className="font-semibold text-blue-800">{item.name}</p>
+                <p className="font-semibold text-theme-blue-2">{item.name}</p>
               </div>
             </div>
           ))}

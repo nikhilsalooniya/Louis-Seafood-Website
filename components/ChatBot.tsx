@@ -89,7 +89,7 @@ export default function ChatBot() {
             setStarted(false);
             setMessages([{ sender: "bot", text: "Welcome to Louis! 😊" }]);
           }}
-          className="fixed bottom-6 right-6 bg-blue-900 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 ease-in-out cursor-pointer"
+          className="fixed bottom-6 right-6 bg-theme-blue-3 text-white p-4 rounded-full shadow-lg hover:scale-110 transition duration-300 ease-in-out cursor-pointer"
           title="Chat with us"
         >
           <svg
@@ -109,8 +109,8 @@ export default function ChatBot() {
         </button>
 
       ) : (
-        <div className="w-80 bg-white shadow-lg rounded-xl overflow-hidden border border-gray-300">
-          <div className="bg-blue-900 text-white p-3 font-bold text-center flex justify-between items-center">
+        <div className="w-80 bg-white shadow-lg rounded-xl overflow-hidden border border-gray-100">
+          <div className="bg-theme-blue-3 text-white p-3 font-bold text-center flex justify-between items-center">
             <span>Ask Me</span>
             <button
               onClick={() => {
@@ -129,7 +129,7 @@ export default function ChatBot() {
               <div
                 key={i}
                 className={`p-2 rounded ${msg.sender === "user"
-                    ? "bg-blue-900 text-white text-right"
+                    ? "bg-theme-blue-3 text-white text-right"
                     : "bg-gray-200 text-black text-left"
                   }`}
               >
@@ -139,16 +139,16 @@ export default function ChatBot() {
           </div>
 
           {!started ? (
-            <div className="flex items-center justify-center h-20 border-t">
+            <div className="flex items-center justify-center h-20 border-t border-gray-200">
               <button
                 onClick={handleStart}
-                className="bg-blue-900 text-white px-4 py-2 rounded hover:bg-gray-800  transition duration-300 cursor-pointer flex items-center space-x-2"
+                className="bg-theme-blue-3 text-white px-4 py-2 rounded hover:bg-gray-800  transition duration-300 cursor-pointer flex items-center space-x-2"
               >
                 Start Chat
               </button>
             </div>
           ) : (
-            <div className="flex border-t p-2">
+            <div className="flex border-t border-gray-200 p-2">
               <input
                 type="text"
                 value={input}
@@ -159,7 +159,7 @@ export default function ChatBot() {
               />
               <button
                 onClick={handleSend}
-                className="bg-blue-900 text-white px-4 rounded-r hover:bg-gray-800 cursor-pointer"
+                className="bg-theme-blue-3 text-white px-4 rounded-r hover:bg-gray-800 cursor-pointer"
               >
                 Send
               </button>
