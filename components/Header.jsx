@@ -14,33 +14,34 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
+  // Commented this out for making the navbar at top all time
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isMounted) return;
-
-    const handleScroll = () => {
-      const currentScroll = window.pageYOffset;
-      setIsSticky(currentScroll <= lastScrollTop);
-      setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isMounted, lastScrollTop]);
-
-  if (!isMounted) return null;
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, []);
+  //
+  // useEffect(() => {
+  //   if (!isMounted) return;
+  //
+  //   const handleScroll = () => {
+  //     const currentScroll = window.pageYOffset;
+  //     setIsSticky(currentScroll <= lastScrollTop);
+  //     setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll);
+  //   };
+  //
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => window.removeEventListener('scroll', handleScroll);
+  // }, [isMounted, lastScrollTop]);
+  //
+  // if (!isMounted) return null;
 
   return (
     <>
       {/* Address + Phone Top Bar */}
-      <div className="bg-gray-900 text-white text-sm px-6 py-2 flex justify-between items-center">
-        <span></span>
-        <span></span>
-      </div>
+      {/*<div className="bg-gray-900 text-white text-sm px-6 py-2 flex justify-between items-center">*/}
+      {/*  <span></span>*/}
+      {/*  <span></span>*/}
+      {/*</div>*/}
 
       <header
         className={` bg-white text-gray-900 py-4 px-6 shadow-md transition-all duration-300 ${isSticky ? 'sticky top-0 z-50' : '-top-20'

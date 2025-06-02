@@ -17,6 +17,25 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+export async function PUT(req: NextRequest) {
+  try {
+    const formData = await req.formData();
+    const heading = formData.get('heading') as string;
+    const description = formData.get('description') as string;
+
+    // Insert into DB
+    await pool.query(
+      'INSERT INTO whoarewe (heading, description) VALUES ($1, $2)',
+      [heading, description]
+    );
+
+    return NextResponse.json({ message: 'Hero section saved successfully!' }, { status: 201 });
+  } catch (err) {
+    console.error('Error inserting into the database:', err);
+    return NextResponse.json({ error: 'Database error' }, { status: 500 });
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();

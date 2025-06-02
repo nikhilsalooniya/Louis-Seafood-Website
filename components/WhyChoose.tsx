@@ -1,4 +1,11 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
+
+interface Card {
+  id: number;
+  title: string;
+  description: string;
+}
 
 const points = [
   {
@@ -29,6 +36,23 @@ const points = [
 ];
 
 const WhyChooseUs = () => {
+
+  const [cards, setCards] = useState<Card[]>([]);
+
+  useEffect(() => {
+    const fetchCards = async () => {
+      try {
+        const res = await fetch('/api/WhyChooseLouis');
+        const data = await res.json();
+        setCards(data);
+      } catch (err) {
+        console.error('Error fetching offers:', err);
+      }
+    };
+
+    fetchCards();
+  }, []);
+
   return (
     <div className="relative bg-white p-10 shadow-xl rounded-xl overflow-hidden max-w-4xl mx-auto mt-10">
       {/* Folded corner effect */}
@@ -42,7 +66,8 @@ const WhyChooseUs = () => {
       </h2>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {points.map((item, index) => (
+
+        {cards.map((item, index) => (
           <div
             key={index}
             className="bg-[#f9f9f9] rounded-lg p-5 shadow-sm hover:shadow-md transition"
@@ -51,6 +76,17 @@ const WhyChooseUs = () => {
             <p className="text-gray-700 text-sm leading-relaxed">{item.description}</p>
           </div>
         ))}
+
+        {/*{points.map((item, index) => (*/}
+        {/*  <div*/}
+        {/*    key={index}*/}
+        {/*    className="bg-[#f9f9f9] rounded-lg p-5 shadow-sm hover:shadow-md transition"*/}
+        {/*  >*/}
+        {/*    <h3 className="text-xl font-semibold text-blue-800 mb-2">{item.title}</h3>*/}
+        {/*    <p className="text-gray-700 text-sm leading-relaxed">{item.description}</p>*/}
+        {/*  </div>*/}
+        {/*))}*/}
+
       </div>
     </div>
   );

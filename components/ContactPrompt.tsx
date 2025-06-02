@@ -1,8 +1,42 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+interface ContactInfoData {
+  address: string;
+  number: string;
+  email: string;
+}
 
 export default function ContactForm() {
+  // contact information get data
+  const [data, setData] = useState<ContactInfoData>({
+    address: '',
+    number: '',
+    email: '',
+  });
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch('/api/contactInformation');
+        const json = await res.json();
+        if (res.ok) {
+          setData(json);
+        } else {
+          setError('Failed to fetch data');
+        }
+      } catch (err) {
+        setError('Error fetching data');
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // form functions
+
   const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
   const [status, setStatus] = useState('');
 
@@ -45,18 +79,18 @@ export default function ContactForm() {
         <div className="relative z-10 space-y-8">
           <div>
             <h3 className="text-xl font-semibold mb-1">📍 Address</h3>
-            <p>447 Broadway, 2nd floor #1179
-
-              <br />New York, NY 10013</p>
+            <p className={"whitespace-pre-wrap"}>
+              { data.address || `447 Broadway, 2nd floor #1179\nNew York, NY 10013` }
+            </p>
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-1">📞 Let&apos;s Talk</h3>
 
-            <a href="tel:0787878787" className="text-cyan-400 hover:underline">0787878787</a>
+            <a href="tel:0787878787" className="text-cyan-400 hover:underline">{ data.number || `0787878787` }</a>
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-1">📧 General Support</h3>
-            <a href="info@louisseafood.com" className="text-cyan-400 hover:underline">info@louisseafood.com</a>
+            <a href="info@louisseafood.com" className="text-cyan-400 hover:underline">{ data.email || `info@louisseafood.com` }</a>
           </div>
         </div>
       </div>

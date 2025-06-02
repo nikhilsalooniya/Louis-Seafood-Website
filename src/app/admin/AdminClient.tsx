@@ -15,7 +15,10 @@ import HeroSectionForm2 from '../../../components/HomeEdit/HeroSectionForm2';
 import TestimonialForm from '../../../components/HomeEdit/Testimonials';
 import WhoWeAre from '../../../components/AboutEdit/whosection';
 import OurStrengthForm from '../../../components/AboutEdit/OurStrength';
+import WhyChooseLouis from '../../../components/AboutEdit/WhyChooseLouis';
 import OfferForm from '../../../components/HomeEdit/offer';
+import ContactInformation from '../../../components/ContactEdit/ContactInformation';
+
 const componentMap: Record<string, React.ReactNode> = {
   fish: <FishPage />,
   shellfish: <ShellfishPage />,
@@ -31,7 +34,8 @@ const componentMap: Record<string, React.ReactNode> = {
   offer: <OfferForm />,
   WhoAreWe: <WhoWeAre />,
   OurStrength: <OurStrengthForm />,
-
+  WhyChooseLouis: <WhyChooseLouis />,
+  ContactInformation: <ContactInformation />
 };
 
 const AdminClient = () => {
@@ -40,6 +44,7 @@ const AdminClient = () => {
   const [foodOpen, setFoodOpen] = useState<boolean>(false);
   const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
   const [homeOpen, setHomeOpen] = useState<boolean>(false);
+  const [contactOpen, setContactOpen] = useState<boolean>(false);
 
 
   const handleLogout = () => {
@@ -47,7 +52,7 @@ const AdminClient = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row min-h-screen">
+    <div className="flex flex-col md:flex-row h-screen min-h-screen">
 
       {/* Mobile Hamburger */}
       <div className="flex justify-between items-center bg-gray-900 p-4 md:hidden">
@@ -152,6 +157,22 @@ const AdminClient = () => {
             <div className="ml-4 mt-2 space-y-1">
               <div onClick={() => setSelectedSection('WhoAreWe')} className="cursor-pointer p-1 hover:bg-blue-700 rounded">Who We Are</div>
               <div onClick={() => setSelectedSection('OurStrength')} className="cursor-pointer p-1 hover:bg-blue-700 rounded">Our Strength</div>
+              <div onClick={() => setSelectedSection('WhyChooseLouis')} className="cursor-pointer p-1 hover:bg-blue-700 rounded">Why Choose Louis</div>
+            </div>
+          )}
+        </div>
+
+        {/* Contact Us Dropdown */}
+        <div>
+          <div
+            onClick={() => setSelectedSection('contactUs')}
+            className="cursor-pointer font-semibold p-2 rounded bg-gray-800 hover:bg-blue-800"
+          >
+            Contact Us ▾
+          </div>
+          {selectedSection === 'contactUs' && (
+            <div className="ml-4 mt-2 space-y-1">
+              <div onClick={() => setSelectedSection('ContactInformation')} className="cursor-pointer p-1 hover:bg-blue-700 rounded">Contact Information</div>
             </div>
           )}
         </div>

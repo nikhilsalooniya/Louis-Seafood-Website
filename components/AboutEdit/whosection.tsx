@@ -13,16 +13,30 @@ const WhoWeAreForm = () => {
     const formData = new FormData();
     formData.append('heading', heading);
     formData.append('description', description);
-   
-    if (video) formData.append('video', video);
 
-    const res = await fetch('/api/whoarewe', {
-      method: 'POST',
-      body: formData,
-    });
+    if (video) {
+      formData.append('video', video);
 
-    if (res.ok) alert('Who We Are section updated!');
-    else alert('Something went wrong!');
+      const res = await fetch('/api/whoarewe', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (res.ok) alert('Who We Are section updated - Completely!');
+      else alert('Something went wrong!');
+
+    } else {
+
+      const res = await fetch('/api/whoarewe', {
+        method: 'PUT',
+        body: formData,
+      });
+
+      if (res.ok) alert('Who We Are section updated - Title & Description!');
+      else alert('Something went wrong!');
+
+    }
+
   };
 
   return (
