@@ -16,6 +16,7 @@ import TestimonialForm from '../../../components/HomeEdit/Testimonials';
 import WhoWeAre from '../../../components/AboutEdit/whosection';
 import OurStrengthForm from '../../../components/AboutEdit/OurStrength';
 import WhyChooseLouis from '../../../components/AboutEdit/WhyChooseLouis';
+import OurMission from '../../../components/AboutEdit/OurMission';
 import OfferForm from '../../../components/HomeEdit/offer';
 import ContactInformation from '../../../components/ContactEdit/ContactInformation';
 
@@ -35,6 +36,7 @@ const componentMap: Record<string, React.ReactNode> = {
   WhoAreWe: <WhoWeAre />,
   OurStrength: <OurStrengthForm />,
   WhyChooseLouis: <WhyChooseLouis />,
+  OurMission: <OurMission />,
   ContactInformation: <ContactInformation />
 };
 
@@ -158,6 +160,7 @@ const AdminClient = () => {
               <div onClick={() => setSelectedSection('WhoAreWe')} className="cursor-pointer p-1 hover:bg-blue-700 rounded">Who We Are</div>
               <div onClick={() => setSelectedSection('OurStrength')} className="cursor-pointer p-1 hover:bg-blue-700 rounded">Our Strength</div>
               <div onClick={() => setSelectedSection('WhyChooseLouis')} className="cursor-pointer p-1 hover:bg-blue-700 rounded">Why Choose Louis</div>
+              <div onClick={() => setSelectedSection('OurMission')} className="cursor-pointer p-1 hover:bg-blue-700 rounded">Our Mission</div>
             </div>
           )}
         </div>
@@ -190,7 +193,7 @@ const AdminClient = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 p-6 bg-gray-50">
+      <main className="flex-1 p-6 bg-gray-50 overflow-scroll">
         {selectedSection ? componentMap[selectedSection] : (
           <h1 className="text-2xl font-bold text-gray-800">Welcome to the Admin Dashboard</h1>
         )}
